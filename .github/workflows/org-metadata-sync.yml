@@ -1,0 +1,80 @@
+name: Org metadata sync
+
+on:
+  repository_dispatch:
+    types: [org-repo-changed]
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: Optional single repo name (without org prefix)
+        required: false
+      dry_run:
+        description: Dry run (no writes)
+        type: boolean
+        default: false
+  schedule:
+    - cron: "17 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: org-metadata-sync-${{ github.repository_owner }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout org profile repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.ORG_SYNC_PAT }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        working-directory: org-sync
+        run: pip install -r requirements.txt
+
+      - name: Resolve target repository
+        id: target
+        run: |
+          if [ -n "${{ github.event.inputs.repository }}" ]; then
+            echo "repo=${{ github.event.inputs.repository }}" >> "$GITHUB_OUTPUT"
+          elif [ -n "${{ github.event.client_payload.repository }}" ]; then
+            REPO_FULL="${{ github.event.client_payload.repository }}"
+            echo "repo=${REPO_FULL##*/}" >> "$GITHUB_OUTPUT"
+          else
+            echo "repo=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Sync org metadata
+        working-directory: org-sync
+        env:
+          GH_TOKEN: ${{ secrets.ORG_SYNC_PAT }}
+          GITHUB_ROOT: ${{ github.workspace }}
+          ORG_DOTGITHUB_ROOT: ${{ github.workspace }}
+        run: |
+          ARGS=(--org "${{ github.repository_owner }}")
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            ARGS+=(--dry-run)
+          fi
+          if [ -n "${{ steps.target.outputs.repo }}" ]; then
+            ARGS+=(--repository "${{ steps.target.outputs.repo }}")
+          fi
+          python sync.py "${ARGS[@]}"
+
+      - name: Summary
+        run: |
+          echo "Org: ${{ github.repository_owner }}"
+          echo "Trigger: ${{ github.event_name }}"
+          echo "Repo filter: ${{ steps.target.outputs.repo || 'ALL' }}"
