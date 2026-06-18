@@ -52,6 +52,17 @@ def ensure_trigger(repo: Path, org: str, dry_run: bool, no_push: bool) -> str:
         return f"commit_failed: {(cm.stderr or cm.stdout)[:120]}"
     if no_push:
         return "committed"
+    ahead = subprocess.run(
+        ["git", "rev-list", "--count", "origin/main..HEAD"],
+        cwd=repo,
+        capture_output=True,
+        text=True,
+    )
+    if ahead.returncode == 0 and ahead.stdout.strip().isdigit() and int(ahead.stdout.strip()) > 0:
+        push = subprocess.run(["git", "push"], cwd=repo, capture_output=True, text=True)
+        if push.returncode != 0:
+            return f"push_failed: {(push.stderr or push.stdout)[:120]}"
+        return "pushed"
     push = subprocess.run(["git", "push"], cwd=repo, capture_output=True, text=True)
     if push.returncode != 0:
         return f"push_failed: {(push.stderr or push.stdout)[:120]}"
