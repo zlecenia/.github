@@ -101,11 +101,15 @@ def main() -> int:
 
     org_cfg = load_org_config(args.org)
     local_root = Path(args.github_root) / args.org
+    org_dotgithub = Path(os.environ.get("ORG_DOTGITHUB_ROOT", local_root / ".github"))
     toolkit_root = Path(__file__).resolve().parent.parent
-    if (toolkit_root / ".git").exists():
+    # Always target the synced org's .github repo, not whichever checkout hosts sync.py.
+    if org_dotgithub.exists() and (org_dotgithub / ".git").exists():
+        dotgithub = org_dotgithub
+    elif (toolkit_root / ".git").exists():
         dotgithub = toolkit_root
     else:
-        dotgithub = Path(os.environ.get("ORG_DOTGITHUB_ROOT", local_root / ".github"))
+        dotgithub = org_dotgithub
     profile_path = dotgithub / "profile" / "README.md"
 
     repos = list_org_repos(org_cfg.org)
