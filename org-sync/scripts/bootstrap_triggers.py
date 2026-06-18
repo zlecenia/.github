@@ -33,15 +33,23 @@ def ensure_trigger(repo: Path, org: str, dry_run: bool, no_push: bool) -> str:
     workflow_dir.mkdir(parents=True, exist_ok=True)
     workflow_path.write_text(content, encoding="utf-8")
 
-    subprocess.run(["git", "add", str(workflow_path)], cwd=repo, check=True)
-    status = subprocess.run(["git", "status", "--porcelain"], cwd=repo, capture_output=True, text=True)
+    add = subprocess.run(["git", "add", str(workflow_path)], cwd=repo, capture_output=True, text=True)
+    if add.returncode != 0:
+        return f"add_failed: {(add.stderr or add.stdout)[:120]}"
+    status = subprocess.run(["git", "status", "--porcelain", str(workflow_path)], cwd=repo, capture_output=True, text=True)
     if not status.stdout.strip():
         return "unchanged"
-    subprocess.run(
+    cm = subprocess.run(
         ["git", "commit", "-m", "ci: add org metadata sync trigger workflow"],
         cwd=repo,
-        check=True,
+        capture_output=True,
+        text=True,
     )
+    if cm.returncode != 0:
+        msg = (cm.stderr or cm.stdout).lower()
+        if "nothing to commit" in msg:
+            return "unchanged"
+        return f"commit_failed: {(cm.stderr or cm.stdout)[:120]}"
     if no_push:
         return "committed"
     push = subprocess.run(["git", "push"], cwd=repo, capture_output=True, text=True)
