@@ -36,7 +36,7 @@ Client delivery and embedded projects.
 | [cpp](https://zlecenia.github.io/cpp/) | Cpp | — |
 | [maski](https://zlecenia.github.io/maski/) | Maski | Python |
 | [WaproMagModule](https://zlecenia.github.io/WaproMagModule/) | Wapromagmodule | — |
-| [wapromagpy](https://zlecenia.github.io/wapromagpy/) | Wapromagpy | Python |
+| [wapromagpy](https://zlecenia.github.io/wapromagpy/) | Obsługa dokumentów ZO z WAPRO Mag i drukarek termicznych | Python |
 | [wydruk-etykiet-towarowych-pz](https://zlecenia.github.io/wydruk-etykiet-towarowych-pz/) | Secure agent-server API for printing product labels from PZ documents | TSQL |
 | [xml-baselinker](https://zlecenia.github.io/xml-baselinker/) | Xml Baselinker | Python |
 
