@@ -47,4 +47,4 @@ Client delivery and embedded projects.
 - **Łącznie projektów**: 25
 - **Strony projektów**: `https://zlecenia.github.io/<repo>/`
 
-_Ostatnia aktualizacja: 2026-08-09_
+_Ostatnia aktualizacja: 2026-08-10_
