@@ -15,10 +15,10 @@ Client delivery and embedded projects.
 | Projekt | Opis | Język |
 |---------|------|-------|
 | [01.mask.services](https://zlecenia.github.io/01.mask.services/) | 01.Mask.Services | JavaScript |
-| [1001.mask.services](https://zlecenia.github.io/1001.mask.services/) | Industrial monitoring system with modular architecture, config validation, and CRUD generation | JavaScript |
+| [1001.mask.services](https://zlecenia.github.io/1001.mask.services/) | 1001.Mask.Services | JavaScript |
 | [archiwum](https://zlecenia.github.io/archiwum/) | Archiwum | — |
 | [c20](https://zlecenia.github.io/c20/) | C20 | Shell |
-| [c2002](https://zlecenia.github.io/c2002/) | Comprehensive Fleet Management System with modular architecture | JavaScript |
+| [c2002](https://zlecenia.github.io/c2002/) | C2002 | JavaScript |
 | [C2003](https://zlecenia.github.io/C2003/) | C2003 | Python |
 | [c201001.mask.services](https://zlecenia.github.io/c201001.mask.services/) | C201001.Mask.Services | JavaScript |
 | [c20cpp](https://zlecenia.github.io/c20cpp/) | C20Cpp | CSS |
@@ -26,7 +26,7 @@ Client delivery and embedded projects.
 | [c20fleet](https://zlecenia.github.io/c20fleet/) | C20Fleet | — |
 | [c20frame](https://zlecenia.github.io/c20frame/) | C20Frame | PHP |
 | [c20frame2](https://zlecenia.github.io/c20frame2/) | C20Frame2 | PHP |
-| [c20frame3](https://zlecenia.github.io/c20frame3/) | C20 IoT Framework - System B (Simple System with Clean Architecture) | PHP |
+| [c20frame3](https://zlecenia.github.io/c20frame3/) | C20Frame3 | PHP |
 | [c20frame4](https://zlecenia.github.io/c20frame4/) | C20Frame4 | Python |
 | [c20mqtt](https://zlecenia.github.io/c20mqtt/) | C20Mqtt | JavaScript |
 | [c20scratch](https://zlecenia.github.io/c20scratch/) | C20Scratch | HTML |
@@ -47,4 +47,4 @@ Client delivery and embedded projects.
 - **Łącznie projektów**: 25
 - **Strony projektów**: `https://zlecenia.github.io/<repo>/`
 
-_Ostatnia aktualizacja: 2026-08-29_
+_Ostatnia aktualizacja: 2026-08-30_
