@@ -18,7 +18,7 @@ Client delivery and embedded projects.
 | [1001.mask.services](https://zlecenia.github.io/1001.mask.services/) | Industrial monitoring system with modular architecture, config validation, and CRUD generation | JavaScript |
 | [archiwum](https://zlecenia.github.io/archiwum/) | Archiwum | — |
 | [c20](https://zlecenia.github.io/c20/) | C20 | Shell |
-| [c2002](https://zlecenia.github.io/c2002/) | Comprehensive Fleet Management System with modular architecture | JavaScript |
+| [c2002](https://zlecenia.github.io/c2002/) | C2002 | JavaScript |
 | [C2003](https://zlecenia.github.io/C2003/) | C2003 | Python |
 | [c201001.mask.services](https://zlecenia.github.io/c201001.mask.services/) | C201001.Mask.Services | JavaScript |
 | [c20cpp](https://zlecenia.github.io/c20cpp/) | C20Cpp | CSS |
