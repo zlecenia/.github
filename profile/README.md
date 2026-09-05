@@ -26,7 +26,7 @@ Client delivery and embedded projects.
 | [c20fleet](https://zlecenia.github.io/c20fleet/) | C20Fleet | — |
 | [c20frame](https://zlecenia.github.io/c20frame/) | C20Frame | PHP |
 | [c20frame2](https://zlecenia.github.io/c20frame2/) | C20Frame2 | PHP |
-| [c20frame3](https://zlecenia.github.io/c20frame3/) | C20Frame3 | PHP |
+| [c20frame3](https://zlecenia.github.io/c20frame3/) | C20 IoT Framework - System B (Simple System with Clean Architecture) | PHP |
 | [c20frame4](https://zlecenia.github.io/c20frame4/) | C20Frame4 | Python |
 | [c20mqtt](https://zlecenia.github.io/c20mqtt/) | C20Mqtt | JavaScript |
 | [c20scratch](https://zlecenia.github.io/c20scratch/) | C20Scratch | HTML |
@@ -47,4 +47,4 @@ Client delivery and embedded projects.
 - **Łącznie projektów**: 25
 - **Strony projektów**: `https://zlecenia.github.io/<repo>/`
 
-_Ostatnia aktualizacja: 2026-09-04_
+_Ostatnia aktualizacja: 2026-09-05_
