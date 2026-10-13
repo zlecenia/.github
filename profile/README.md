@@ -33,7 +33,7 @@ Client delivery and embedded projects.
 | [c20sim](https://zlecenia.github.io/c20sim/) | C20Sim | PHP |
 | [c20test](https://zlecenia.github.io/c20test/) | C20Test | HTML |
 | [cm](https://zlecenia.github.io/cm/) | Cm | Python |
-| [cpp](https://zlecenia.github.io/cpp/) | Cpp | — |
+| [cpp](https://zlecenia.github.io/cpp/) | Cpp | Python |
 | [maski](https://zlecenia.github.io/maski/) | Maski | Python |
 | [WaproMagModule](https://zlecenia.github.io/WaproMagModule/) | Wapromagmodule | — |
 | [wapromagpy](https://zlecenia.github.io/wapromagpy/) | Obsługa dokumentów ZO z WAPRO Mag i drukarek termicznych | Python |
@@ -47,4 +47,4 @@ Client delivery and embedded projects.
 - **Łącznie projektów**: 25
 - **Strony projektów**: `https://zlecenia.github.io/<repo>/`
 
-_Ostatnia aktualizacja: 2026-10-12_
+_Ostatnia aktualizacja: 2026-10-13_
