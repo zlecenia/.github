@@ -1,7 +1,7 @@
 # zlecenia
 
 [![Organization](https://img.shields.io/badge/GitHub-zlecenia-black.svg)](https://github.com/zlecenia)
-[![Projects](https://img.shields.io/badge/projects-26-blue.svg)](https://github.com/zlecenia?tab=repositories)
+[![Projects](https://img.shields.io/badge/projects-27-blue.svg)](https://github.com/zlecenia?tab=repositories)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Client delivery and embedded projects.
@@ -34,6 +34,7 @@ Client delivery and embedded projects.
 | [c20test](https://zlecenia.github.io/c20test/) | C20Test | HTML |
 | [cm](https://zlecenia.github.io/cm/) | Cm | Python |
 | [cpp](https://zlecenia.github.io/cpp/) | Cpp | Python |
+| [ksefwapro](https://zlecenia.github.io/ksefwapro/) | Ksefwapro | TSQL |
 | [maski](https://zlecenia.github.io/maski/) | Maski | Python |
 | [WaproMagModule](https://zlecenia.github.io/WaproMagModule/) | Wapromagmodule | — |
 | [wapromagpy](https://zlecenia.github.io/wapromagpy/) | Obsługa dokumentów ZO z WAPRO Mag i drukarek termicznych | Python |
@@ -44,7 +45,7 @@ Client delivery and embedded projects.
 
 ## Statystyki
 
-- **Łącznie projektów**: 25
+- **Łącznie projektów**: 26
 - **Strony projektów**: `https://zlecenia.github.io/<repo>/`
 
-_Ostatnia aktualizacja: 2026-10-28_
+_Ostatnia aktualizacja: 2026-10-29_
